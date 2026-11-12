@@ -1,0 +1,248 @@
+[
+  {"item":"BMI","source":"대한비만학회 (아시아인 기준)","bands":[
+    {"level":"borderline","label":"저체중","max":18.5},
+    {"level":"normal","label":"정상","min":18.5,"max":23},
+    {"level":"borderline","label":"비만 전단계","min":23,"max":25},
+    {"level":"abnormal","label":"1단계 비만","min":25,"max":30},
+    {"level":"abnormal","label":"2단계 비만","min":30,"max":35},
+    {"level":"abnormal","label":"3단계 비만","min":35}]},
+
+  {"item":"WAIST","sex":"male","source":"대한비만학회","bands":[
+    {"level":"normal","max":85},
+    {"level":"borderline","label":"복부비만 전단계","min":85,"max":90},
+    {"level":"abnormal","label":"복부비만","min":90}]},
+  {"item":"WAIST","sex":"female","source":"대한비만학회","bands":[
+    {"level":"normal","max":80},
+    {"level":"borderline","label":"복부비만 전단계","min":80,"max":85},
+    {"level":"abnormal","label":"복부비만","min":85}]},
+
+  {"item":"BODYFAT","sex":"male","source":"일반 참고치","bands":[
+    {"level":"normal","max":20},
+    {"level":"borderline","label":"다소 높음","min":20,"max":25},
+    {"level":"abnormal","label":"높음 (비만)","min":25}]},
+  {"item":"BODYFAT","sex":"female","source":"일반 참고치","bands":[
+    {"level":"normal","max":28},
+    {"level":"borderline","label":"다소 높음","min":28,"max":33},
+    {"level":"abnormal","label":"높음 (비만)","min":33}]},
+
+  {"item":"SBP","source":"대한고혈압학회 진료지침","bands":[
+    {"level":"borderline","label":"낮음","max":90},
+    {"level":"normal","label":"정상","min":90,"max":120},
+    {"level":"borderline","label":"주의 혈압","min":120,"max":130},
+    {"level":"borderline","label":"고혈압 전단계","min":130,"max":140},
+    {"level":"abnormal","label":"고혈압 1기","min":140,"max":160},
+    {"level":"abnormal","label":"고혈압 2기","min":160}]},
+  {"item":"DBP","source":"대한고혈압학회 진료지침","bands":[
+    {"level":"borderline","label":"낮음","max":60},
+    {"level":"normal","label":"정상","min":60,"max":80},
+    {"level":"borderline","label":"고혈압 전단계","min":80,"max":90},
+    {"level":"abnormal","label":"고혈압 1기","min":90,"max":100},
+    {"level":"abnormal","label":"고혈압 2기","min":100}]},
+
+  {"item":"FBS","source":"대한당뇨병학회 진료지침","bands":[
+    {"level":"borderline","label":"낮음","max":70},
+    {"level":"normal","label":"정상","min":70,"max":100},
+    {"level":"borderline","label":"공복혈당장애","min":100,"max":126},
+    {"level":"abnormal","label":"당뇨병 의심","min":126}]},
+  {"item":"HBA1C","source":"대한당뇨병학회 진료지침","bands":[
+    {"level":"normal","label":"정상","max":5.7},
+    {"level":"borderline","label":"당뇨병 전단계","min":5.7,"max":6.5},
+    {"level":"abnormal","label":"당뇨병 의심","min":6.5}]},
+
+  {"item":"TC","source":"한국지질·동맥경화학회 진료지침","bands":[
+    {"level":"normal","label":"적정","max":200},
+    {"level":"borderline","label":"경계","min":200,"max":240},
+    {"level":"abnormal","label":"높음","min":240}]},
+  {"item":"LDL","source":"한국지질·동맥경화학회 진료지침 (일반 기준, 위험도별 목표치는 4단계에서 적용)","bands":[
+    {"level":"normal","label":"정상","max":130},
+    {"level":"borderline","label":"경계","min":130,"max":160},
+    {"level":"abnormal","label":"높음","min":160,"max":190},
+    {"level":"abnormal","label":"매우 높음","min":190}]},
+  {"item":"HDL","sex":"male","source":"한국지질·동맥경화학회 진료지침","bands":[
+    {"level":"abnormal","label":"낮음","max":40},
+    {"level":"normal","label":"정상","min":40,"max":60},
+    {"level":"normal","label":"좋음","min":60}]},
+  {"item":"HDL","sex":"female","source":"한국지질·동맥경화학회 진료지침 / 대사증후군 기준","bands":[
+    {"level":"abnormal","label":"낮음","max":40},
+    {"level":"borderline","label":"약간 낮음","min":40,"max":50},
+    {"level":"normal","label":"정상","min":50,"max":60},
+    {"level":"normal","label":"좋음","min":60}]},
+  {"item":"TG","source":"한국지질·동맥경화학회 진료지침","bands":[
+    {"level":"normal","label":"적정","max":150},
+    {"level":"borderline","label":"경계","min":150,"max":200},
+    {"level":"abnormal","label":"높음","min":200,"max":500},
+    {"level":"abnormal","label":"매우 높음","min":500}]},
+
+  {"item":"AST","source":"국가건강검진 판정기준 (참고)","bands":[
+    {"level":"normal","max":40,"maxInclusive":true},
+    {"level":"borderline","label":"경계","min":40,"minInclusive":false,"max":50,"maxInclusive":true},
+    {"level":"abnormal","label":"간기능 이상 의심","min":50,"minInclusive":false}]},
+  {"item":"ALT","source":"국가건강검진 판정기준 (참고)","bands":[
+    {"level":"normal","max":35,"maxInclusive":true},
+    {"level":"borderline","label":"경계","min":35,"minInclusive":false,"max":45,"maxInclusive":true},
+    {"level":"abnormal","label":"간기능 이상 의심","min":45,"minInclusive":false}]},
+  {"item":"GGT","sex":"male","source":"국가건강검진 판정기준 (참고)","bands":[
+    {"level":"normal","max":63,"maxInclusive":true},
+    {"level":"borderline","label":"경계","min":63,"minInclusive":false,"max":77,"maxInclusive":true},
+    {"level":"abnormal","label":"높음","min":77,"minInclusive":false}]},
+  {"item":"GGT","sex":"female","source":"국가건강검진 판정기준 (참고)","bands":[
+    {"level":"normal","max":35,"maxInclusive":true},
+    {"level":"borderline","label":"경계","min":35,"minInclusive":false,"max":45,"maxInclusive":true},
+    {"level":"abnormal","label":"높음","min":45,"minInclusive":false}]},
+  {"item":"TBIL","source":"일반 검사실 참고치","bands":[
+    {"level":"normal","max":1.2,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음","min":1.2,"minInclusive":false,"max":2.0,"maxInclusive":true},
+    {"level":"abnormal","label":"높음","min":2.0,"minInclusive":false}]},
+
+  {"item":"CR","sex":"male","source":"국가건강검진 판정기준 (참고) / 일반 검사실 참고치","bands":[
+    {"level":"normal","max":1.3,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음","min":1.3,"minInclusive":false,"max":1.5,"maxInclusive":true},
+    {"level":"abnormal","label":"신장기능 이상 의심","min":1.5,"minInclusive":false}]},
+  {"item":"CR","sex":"female","source":"국가건강검진 판정기준 (참고) / 일반 검사실 참고치","bands":[
+    {"level":"normal","max":1.1,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음","min":1.1,"minInclusive":false,"max":1.5,"maxInclusive":true},
+    {"level":"abnormal","label":"신장기능 이상 의심","min":1.5,"minInclusive":false}]},
+  {"item":"EGFR","ageMax":59,"source":"KDIGO 만성콩팥병 분류","bands":[
+    {"level":"abnormal","label":"심한 감소","max":30},
+    {"level":"abnormal","label":"감소","min":30,"max":60},
+    {"level":"borderline","label":"경도 감소","min":60,"max":90},
+    {"level":"normal","label":"정상","min":90}]},
+  {"item":"EGFR","ageMin":60,"note":"60세 이상은 나이에 따라 eGFR이 자연스럽게 줄어들어, 60 이상이면 나이에 맞는 범위로 봅니다.","source":"KDIGO 만성콩팥병 분류","bands":[
+    {"level":"abnormal","label":"심한 감소","max":30},
+    {"level":"abnormal","label":"감소","min":30,"max":60},
+    {"level":"normal","label":"나이에 맞는 범위","min":60,"max":90},
+    {"level":"normal","label":"정상","min":90}]},
+  {"item":"BUN","source":"일반 검사실 참고치","bands":[
+    {"level":"borderline","label":"낮음","max":6},
+    {"level":"normal","min":6,"max":20,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음","min":20,"minInclusive":false,"max":25,"maxInclusive":true},
+    {"level":"abnormal","label":"높음","min":25,"minInclusive":false}]},
+  {"item":"URIC","sex":"male","source":"일반 검사실 참고치","bands":[
+    {"level":"normal","max":7.0,"maxInclusive":true},
+    {"level":"borderline","label":"고요산혈증","min":7.0,"minInclusive":false,"max":9.0,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (통풍 위험)","min":9.0,"minInclusive":false}]},
+  {"item":"URIC","sex":"female","source":"일반 검사실 참고치","bands":[
+    {"level":"normal","max":6.0,"maxInclusive":true},
+    {"level":"borderline","label":"고요산혈증","min":6.0,"minInclusive":false,"max":8.0,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (통풍 위험)","min":8.0,"minInclusive":false}]},
+
+  {"item":"HB","sex":"male","source":"국가건강검진 판정기준 (참고)","bands":[
+    {"level":"abnormal","label":"빈혈 의심","max":12.0},
+    {"level":"borderline","label":"약간 낮음","min":12.0,"max":13.0},
+    {"level":"normal","min":13.0,"max":16.5,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음","min":16.5,"minInclusive":false,"max":17.5,"maxInclusive":true},
+    {"level":"abnormal","label":"높음","min":17.5,"minInclusive":false}]},
+  {"item":"HB","sex":"female","source":"국가건강검진 판정기준 (참고)","bands":[
+    {"level":"abnormal","label":"빈혈 의심","max":10.0},
+    {"level":"borderline","label":"약간 낮음","min":10.0,"max":12.0},
+    {"level":"normal","min":12.0,"max":15.5,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음","min":15.5,"minInclusive":false,"max":16.5,"maxInclusive":true},
+    {"level":"abnormal","label":"높음","min":16.5,"minInclusive":false}]},
+  {"item":"WBC","source":"일반 검사실 참고치","bands":[
+    {"level":"abnormal","label":"낮음","max":3.0},
+    {"level":"borderline","label":"약간 낮음","min":3.0,"max":4.0},
+    {"level":"normal","min":4.0,"max":10.0,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음","min":10.0,"minInclusive":false,"max":12.0,"maxInclusive":true},
+    {"level":"abnormal","label":"높음","min":12.0,"minInclusive":false}]},
+  {"item":"PLT","source":"일반 검사실 참고치","bands":[
+    {"level":"abnormal","label":"낮음","max":100},
+    {"level":"borderline","label":"약간 낮음","min":100,"max":150},
+    {"level":"normal","min":150,"max":400,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음","min":400,"minInclusive":false,"max":500,"maxInclusive":true},
+    {"level":"abnormal","label":"높음","min":500,"minInclusive":false}]},
+
+  {"item":"TSH","source":"일반 검사실 참고치 (기관마다 다름)","bands":[
+    {"level":"abnormal","label":"낮음 (항진 의심)","max":0.1},
+    {"level":"borderline","label":"약간 낮음","min":0.1,"max":0.4},
+    {"level":"normal","min":0.4,"max":4.5,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음","min":4.5,"minInclusive":false,"max":10,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (저하 의심)","min":10,"minInclusive":false}]},
+  {"item":"FT4","source":"일반 검사실 참고치 (기관마다 다름)","bands":[
+    {"level":"abnormal","label":"낮음","max":0.6},
+    {"level":"borderline","label":"약간 낮음","min":0.6,"max":0.8},
+    {"level":"normal","min":0.8,"max":1.8,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음","min":1.8,"minInclusive":false,"max":2.2,"maxInclusive":true},
+    {"level":"abnormal","label":"높음","min":2.2,"minInclusive":false}]},
+
+  {"item":"HSCRP","source":"심혈관 위험도 참고치","bands":[
+    {"level":"normal","label":"낮은 위험","max":1.0},
+    {"level":"borderline","label":"중간 위험","min":1.0,"max":3.0,"maxInclusive":true},
+    {"level":"abnormal","label":"높은 위험","min":3.0,"minInclusive":false}]},
+  {"item":"VITD","source":"일반 참고치","bands":[
+    {"level":"abnormal","label":"결핍","max":20},
+    {"level":"borderline","label":"부족","min":20,"max":30},
+    {"level":"normal","label":"충분","min":30,"max":100,"maxInclusive":true},
+    {"level":"borderline","label":"과다","min":100,"minInclusive":false}]},
+
+  {"item":"AFP","source":"일반 검사실 참고치","bands":[
+    {"level":"normal","max":10,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음 (재검 권유)","min":10,"minInclusive":false,"max":20,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (추가 검사 필요)","min":20,"minInclusive":false}]},
+  {"item":"CEA","source":"일반 검사실 참고치","note":"흡연자는 CEA가 다소 높게 나올 수 있습니다.","bands":[
+    {"level":"normal","max":5,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음 (재검 권유)","min":5,"minInclusive":false,"max":10,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (추가 검사 필요)","min":10,"minInclusive":false}]},
+  {"item":"CA199","source":"일반 검사실 참고치","bands":[
+    {"level":"normal","max":37,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음 (재검 권유)","min":37,"minInclusive":false,"max":100,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (추가 검사 필요)","min":100,"minInclusive":false}]},
+  {"item":"CA125","sex":"female","source":"일반 검사실 참고치","note":"생리 기간·자궁내막증 등으로도 높아질 수 있습니다.","bands":[
+    {"level":"normal","max":35,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음 (재검 권유)","min":35,"minInclusive":false,"max":65,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (추가 검사 필요)","min":65,"minInclusive":false}]},
+
+  {"item":"FPSA_RATIO","sex":"male","source":"비뇨의학 참고치","note":"PSA가 4~10 사이일 때 참고합니다. 비율이 낮을수록 추가 검사가 권유됩니다.","bands":[
+    {"level":"abnormal","label":"낮음 (추가 검사 권유)","max":10},
+    {"level":"borderline","label":"경계","min":10,"max":25,"maxInclusive":true},
+    {"level":"normal","min":25,"minInclusive":false}]},
+  {"item":"PROSTATE_VOL","sex":"male","source":"초음파 참고치","note":"정상은 약 20mL 안팎입니다. 판독 소견을 우선하세요.","bands":[
+    {"level":"normal","max":30,"maxInclusive":true},
+    {"level":"borderline","label":"커짐 (전립선 비대)","min":30,"minInclusive":false,"max":50,"maxInclusive":true},
+    {"level":"abnormal","label":"많이 커짐","min":50,"minInclusive":false}]},
+  {"item":"IPSS","sex":"male","source":"국제 전립선 증상 점수","note":"0~7 경증, 8~19 중등도, 20~35 중증","bands":[
+    {"level":"normal","label":"경증","max":7,"maxInclusive":true},
+    {"level":"borderline","label":"중등도","min":7,"minInclusive":false,"max":19,"maxInclusive":true},
+    {"level":"abnormal","label":"중증","min":19,"minInclusive":false}]},
+  {"item":"PSA","sex":"male","ageMax":49,"source":"연령별 PSA 참고치","note":"40대 기준 정상 상한은 2.5입니다.","bands":[
+    {"level":"normal","max":2.5,"maxInclusive":true},
+    {"level":"borderline","label":"연령 기준 초과","min":2.5,"minInclusive":false,"max":10,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (추가 검사 필요)","min":10,"minInclusive":false}]},
+  {"item":"PSA","sex":"male","ageMin":50,"ageMax":59,"source":"연령별 PSA 참고치","note":"50대 기준 정상 상한은 3.5입니다.","bands":[
+    {"level":"normal","max":3.5,"maxInclusive":true},
+    {"level":"borderline","label":"연령 기준 초과","min":3.5,"minInclusive":false,"max":10,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (추가 검사 필요)","min":10,"minInclusive":false}]},
+  {"item":"PSA","sex":"male","ageMin":60,"ageMax":69,"source":"연령별 PSA 참고치","note":"60대 기준 정상 상한은 4.5입니다.","bands":[
+    {"level":"normal","max":4.5,"maxInclusive":true},
+    {"level":"borderline","label":"연령 기준 초과","min":4.5,"minInclusive":false,"max":10,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (추가 검사 필요)","min":10,"minInclusive":false}]},
+  {"item":"PSA","sex":"male","ageMin":70,"source":"연령별 PSA 참고치","note":"70세 이상 기준 정상 상한은 6.5입니다.","bands":[
+    {"level":"normal","max":6.5,"maxInclusive":true},
+    {"level":"borderline","label":"연령 기준 초과","min":6.5,"minInclusive":false,"max":10,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (추가 검사 필요)","min":10,"minInclusive":false}]},
+
+  {"item":"BMD_T","ageMin":50,"source":"WHO 골다공증 진단 기준","bands":[
+    {"level":"abnormal","label":"골다공증","max":-2.5,"maxInclusive":true},
+    {"level":"borderline","label":"골감소증","min":-2.5,"minInclusive":false,"max":-1.0},
+    {"level":"normal","label":"정상","min":-1.0}]},
+  {"item":"BMD_T","ageMax":49,"note":"50세 미만(폐경 전)은 T-점수보다 Z-점수로 판단하는 것이 더 적합합니다.","source":"WHO 골다공증 진단 기준","bands":[
+    {"level":"abnormal","label":"골다공증 범위","max":-2.5,"maxInclusive":true},
+    {"level":"borderline","label":"골감소 범위","min":-2.5,"minInclusive":false,"max":-1.0},
+    {"level":"normal","label":"정상","min":-1.0}]},
+  {"item":"BMD_Z","source":"국제임상골밀도학회(ISCD)","bands":[
+    {"level":"abnormal","label":"연령 기대치 이하","max":-2.0,"maxInclusive":true},
+    {"level":"normal","label":"연령 기대 범위","min":-2.0,"minInclusive":false}]},
+
+  {"item":"VIS_L","source":"일반 참고치","note":"안경·렌즈 착용 시 교정 시력을 입력하세요.","bands":[
+    {"level":"abnormal","label":"낮음","max":0.3},
+    {"level":"borderline","label":"약간 낮음","min":0.3,"max":0.8},
+    {"level":"normal","min":0.8}]},
+  {"item":"VIS_R","source":"일반 참고치","note":"안경·렌즈 착용 시 교정 시력을 입력하세요.","bands":[
+    {"level":"abnormal","label":"낮음","max":0.3},
+    {"level":"borderline","label":"약간 낮음","min":0.3,"max":0.8},
+    {"level":"normal","min":0.8}]},
+  {"item":"IOP","source":"일반 참고치","bands":[
+    {"level":"borderline","label":"낮음","max":10},
+    {"level":"normal","min":10,"max":21,"maxInclusive":true},
+    {"level":"borderline","label":"약간 높음","min":21,"minInclusive":false,"max":25,"maxInclusive":true},
+    {"level":"abnormal","label":"높음 (녹내장 검사 권유)","min":25,"minInclusive":false}]}
+]
