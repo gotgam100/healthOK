@@ -47,6 +47,9 @@ macOS 13 이상에서 돌도록 SwiftData 대신 JSON 파일을 씁니다. 저�
 | `HEALTHCHECKUP_PERSON=0` | 시작 구성원 번호 |
 | `HEALTHCHECKUP_OPEN_EDITOR=1` | 최근 검진 편집 창 열기 |
 | `HEALTHCHECKUP_EXPORT_MD=/경로/out.md` | 모든 구성원을 AI용 Markdown으로 저장 |
+| `HEALTHCHECKUP_FAKE_VERSION=0.0.9` | 지금 버전을 이 값으로 여김 (업데이트 알림 시험) |
+| `HEALTHCHECKUP_UPDATE_CHECK=1` | 켤 때 하루 한 번 제한 없이 업데이트 확인 |
+| `HEALTHCHECKUP_DUMP_MENU=1` | 3초 뒤 메뉴바 구성을 표준 출력에 찍음 |
 | `HEALTHCHECKUP_EDITOR_FOCUS=VITD` | 편집 창을 열면서 그 항목으로 이동 |
 | `HEALTHCHECKUP_EDITOR_SEARCH=요` | 편집 창의 항목 검색어 미리 넣기 |
 | `HEALTHCHECKUP_SECTION=trends` + `HEALTHCHECKUP_TREND=LDL` | 추이 화면에서 특정 항목 상세 열기 |
