@@ -21,8 +21,10 @@ enum UpdateChecker {
         }
         var version: String { tag_name.hasPrefix("v") ? String(tag_name.dropFirst()) : tag_name }
         var downloadURL: URL {
-            let zip = assets.first { $0.name.lowercased().hasSuffix(".zip") }
-            return URL(string: zip?.browser_download_url ?? html_url) ?? UpdateChecker.releasesPage
+            // DMG가 있으면 DMG, 없으면 zip
+            let file = assets.first { $0.name.lowercased().hasSuffix(".dmg") }
+                ?? assets.first { $0.name.lowercased().hasSuffix(".zip") }
+            return URL(string: file?.browser_download_url ?? html_url) ?? UpdateChecker.releasesPage
         }
     }
 
@@ -83,7 +85,7 @@ enum UpdateChecker {
         var info = "지금 버전: \(current)\n\n"
         let notes = (r.body ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
         if !notes.isEmpty { info += String(notes.prefix(600)) + "\n\n" }
-        info += "[내려받기]를 누르면 zip 파일을 받습니다. 압축을 풀고 '응용 프로그램' 폴더의 앱을 새 앱으로 바꾸면 됩니다. 기록은 따로 저장되어 있어 그대로 남습니다."
+        info += "[내려받기]를 누르면 새 버전 파일을 받습니다. 이 앱을 종료한 뒤, 받은 파일을 열어 앱을 '응용 프로그램' 폴더로 끌어 놓고 [대치]를 누르면 됩니다. 기록은 따로 저장되어 있어 그대로 남습니다."
         a.informativeText = info
         a.addButton(withTitle: "내려받기")
         a.addButton(withTitle: "나중에")

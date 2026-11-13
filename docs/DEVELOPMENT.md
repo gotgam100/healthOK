@@ -10,7 +10,7 @@ open HealthCheckup.xcodeproj   # Xcode에서 ⌘R
 ## 가족에게 나눠 줄 앱 만들기
 
 ```bash
-./scripts/build_app.sh     # dist/건강하면됐지.app, dist/건강하면됐지.zip 생성
+./scripts/build_app.sh     # dist/건강하면됐지.app, dist/HealthOK.dmg 생성
 ```
 
 Developer ID 인증서가 있으면 서명하고, 키체인에 공증 정보(`healthok`)가 있으면 Apple 공증까지 받습니다. 없으면 ad-hoc 서명으로 만듭니다.
@@ -56,5 +56,5 @@ macOS 13 이상에서 돌도록 SwiftData 대신 JSON 파일을 씁니다. 저�
 ## 새 버전 배포
 
 1. `project.yml`의 `MARKETING_VERSION`을 올리고 `./scripts/build_app.sh`
-2. `dist/건강하면됐지.zip`을 **`HealthOK.zip`** 이라는 이름으로 `vX.Y.Z` Release에 올림
-   (README의 내려받기 링크 `releases/latest/download/HealthOK.zip`이 이 이름을 가리킴)
+2. `dist/HealthOK.dmg`를 `vX.Y.Z` Release에 올림
+   (README의 내려받기 링크 `releases/latest/download/HealthOK.dmg`가 이 이름을 가리킴)
