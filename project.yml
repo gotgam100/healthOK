@@ -7,6 +7,10 @@ options:
 packages:
   HealthCore:
     path: Packages/HealthCore
+  # 앱 안 자동 업데이트
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    exactVersion: 2.10.1
 settings:
   base:
     SWIFT_VERSION: "6.0"
@@ -18,6 +22,7 @@ targets:
       - HealthCheckup
     dependencies:
       - package: HealthCore
+      - package: Sparkle
     settings:
       base:
         PRODUCT_NAME: 건강하면됐지
@@ -28,16 +33,18 @@ targets:
         EXECUTABLE_NAME: HealthCheckup
         PRODUCT_BUNDLE_IDENTIFIER: local.healthcheckup.app
         GENERATE_INFOPLIST_FILE: YES
+        # Sparkle 설정(업데이트 주소·공개 열쇠)은 이 파일에, 나머지는 자동 생성과 합쳐짐
+        INFOPLIST_FILE: HealthCheckup/Info.plist
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         INFOPLIST_KEY_CFBundleDisplayName: 건강하면됐지
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.medical
         INFOPLIST_KEY_NSHumanReadableCopyright: "Copyright © 2026 healthOK. All rights reserved."
-        MARKETING_VERSION: "0.2.3"
-        CURRENT_PROJECT_VERSION: "5"
+        MARKETING_VERSION: "0.3.0"
+        CURRENT_PROJECT_VERSION: "6"
         SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
         SWIFT_APPROACHABLE_CONCURRENCY: YES
         ENABLE_PREVIEWS: YES
-        # 가족 맥에 나눠 줄 수 있도록 개발자 계정 없이 ad-hoc 서명
+        # Xcode에서는 ad-hoc 서명, 배포용 서명·공증은 scripts/build_app.sh가 함
         CODE_SIGN_STYLE: Manual
         CODE_SIGN_IDENTITY: "-"
         DEVELOPMENT_TEAM: ""

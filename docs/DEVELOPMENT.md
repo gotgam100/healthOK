@@ -44,9 +44,10 @@ macOS 13 이상에서 돌도록 SwiftData 대신 JSON 파일을 씁니다. 저�
 | `HEALTHCHECKUP_PERSON=0` | 시작 구성원 번호 |
 | `HEALTHCHECKUP_OPEN_EDITOR=1` | 최근 검진 편집 창 열기 |
 | `HEALTHCHECKUP_EXPORT_MD=/경로/out.md` | 모든 구성원을 AI용 Markdown으로 저장 |
-| `HEALTHCHECKUP_FAKE_VERSION=0.0.9` | 지금 버전을 이 값으로 여김 (업데이트 알림 시험) |
-| `HEALTHCHECKUP_UPDATE_CHECK=1` | 켤 때 하루 한 번 제한 없이 업데이트 확인 |
+| `HEALTHCHECKUP_FEED_URL=http://…/appcast.xml` | 업데이트 주소 바꾸기 (업데이트 시험) |
+| `HEALTHCHECKUP_CHECK_UPDATE_NOW=1` | 켜자마자 조용히 업데이트 확인 (배포용 앱에서도 동작) |
 | `HEALTHCHECKUP_DUMP_MENU=1` | 3초 뒤 메뉴바 구성을 표준 출력에 찍음 |
+| `HEALTHCHECKUP_SHOW_ABOUT=1` | 켜자마자 앱 정보 창 띄우기 |
 | `HEALTHCHECKUP_EDITOR_FOCUS=VITD` | 편집 창을 열면서 그 항목으로 이동 |
 | `HEALTHCHECKUP_EDITOR_SEARCH=요` | 편집 창의 항목 검색어 미리 넣기 |
 | `HEALTHCHECKUP_SECTION=trends` + `HEALTHCHECKUP_TREND=LDL` | 추이 화면에서 특정 항목 상세 열기 |
@@ -55,6 +56,4 @@ macOS 13 이상에서 돌도록 SwiftData 대신 JSON 파일을 씁니다. 저�
 
 ## 새 버전 배포
 
-1. `project.yml`의 `MARKETING_VERSION`을 올리고 `./scripts/build_app.sh`
-2. `dist/HealthOK.dmg`를 `vX.Y.Z` Release에 올림
-   (README의 내려받기 링크 `releases/latest/download/HealthOK.dmg`가 이 이름을 가리킴)
+[RELEASE.md](RELEASE.md)를 보세요. `./scripts/release.sh` 하나로 서명·공증·앱 안 업데이트용 파일까지 만들어 올립니다.

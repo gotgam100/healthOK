@@ -5,11 +5,7 @@ struct HealthCheckupApp: App {
     init() {
         FocusReleaser.install()
         MenuCleaner.install()
-        NotificationCenter.default.addObserver(forName: NSApplication.didFinishLaunchingNotification,
-                                               object: nil, queue: .main) { _ in
-            // 켜자마자 창이 뜬 뒤에 조용히 확인
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { UpdateChecker.checkAutomatically() }
-        }
+        UpdateChecker.start()
         #if DEBUG
         MenuDump.scheduleIfRequested()
         #endif
