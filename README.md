@@ -1,57 +1,38 @@
-# 건강하면됐지 (macOS)
+# 건강하면됐지
 
-가족의 건강검진 결과를 여러 해에 걸쳐 기록하고, 성별·나이에 맞는 기준치로 판정해 주는 맥 앱입니다.
-전체 계획은 [PLAN.md](PLAN.md)를 보세요. 현재 1단계(기반), 2단계(추이 그래프), 3단계(전신 인포그래픽 1차)까지 구현되어 있습니다.
+가족의 건강검진 결과를 해마다 모아 두고, 한눈에 보는 맥 앱입니다.
 
-## 실행
+### [⬇︎ 최신 버전 내려받기](https://github.com/gotgam100/healthOK/releases/latest/download/HealthOK.zip)
 
-```bash
-xcodegen generate          # HealthCheckup.xcodeproj 생성
-open HealthCheckup.xcodeproj   # Xcode에서 ⌘R
-```
+macOS 13(Ventura) 이상 · Apple 실리콘·인텔 맥 모두 지원 · [모든 버전 보기](https://github.com/gotgam100/healthOK/releases)
 
-## 가족에게 나눠 줄 앱 만들기
+![요약 화면](docs/images/summary.png)
 
-```bash
-./scripts/build_app.sh     # dist/건강하면됐지.app, dist/건강하면됐지.zip 생성
-```
+## 할 수 있는 것
 
-개발자 계정 없이 서명한 앱이라, 다른 맥에서 처음 열 때는 **Finder에서 앱을 우클릭 → 열기**를 해야 합니다.
+- **가족별 검진 기록**: 구성원마다 해마다 받은 검진 결과를 표로 모아 봅니다.
+- **정상·주의·이상 판정**: 성별과 검진 당시 나이에 맞는 기준으로 수치를 판정하고, 참고치를 함께 보여 줍니다.
+- **전신 인포그래픽**: 간·신장·심장 등 부위별 상태를 그림으로 한눈에 봅니다.
+- **추이 그래프**: 해마다 수치가 어떻게 바뀌었는지, 나빠지고 있는 항목은 무엇인지 보여 줍니다.
+- **AI에게 물어보기**: 기록을 Markdown 파일로 내보내 ChatGPT·Claude 같은 AI에 올려 질문할 수 있습니다.
+- **다른 맥으로 옮기기**: 기록을 파일로 내보내고 가져올 수 있습니다.
+- **자동 업데이트 알림**: 새 버전이 나오면 앱이 알려 줍니다.
 
-## 판정 로직 테스트
+![추이 그래프](docs/images/trends.png)
 
-```bash
-cd Packages/HealthCore && SDKROOT=macosx swift test
-```
+## 설치
 
-## 구조
+1. 위의 **최신 버전 내려받기**를 눌러 zip 파일을 받습니다.
+2. 압축을 풀고 `건강하면됐지.app`을 **응용 프로그램** 폴더로 옮깁니다.
+3. 처음 열 때 "확인되지 않은 개발자" 경고가 나오면
+   - macOS 13·14: 앱을 마우스 오른쪽 버튼으로 클릭 → **열기** → 다시 **열기**
+   - macOS 15 이상: 한 번 열어 본 뒤 **시스템 설정 › 개인정보 보호 및 보안** 아래쪽의 **그래도 열기**
 
-| 경로 | 내용 |
-|------|------|
-| `Packages/HealthCore` | 검사 항목 사전(`items.json`), 기준치 규칙(`rules.json`), 판정 엔진, 테스트 |
-| `HealthCheckup/Models` | 기록 모델과 JSON 저장소(HealthStore), 이전 SwiftData 기록 옮기기(LegacyStore) |
-| `HealthCheckup/Features` | 요약 / 검진 기록 표 / 입력 / 프로필 화면 |
-| `scripts/build_app.sh` | 배포용 `.app` 빌드 |
+새 버전으로 바꿀 때는 앱만 바꾸면 됩니다. 기록은 따로 저장되어 있어 그대로 남습니다.
 
-데이터는 `~/Library/Application Support/HealthCheckup/health.json` 에만 저장됩니다 (직전 상태는 `health.json.bak`).
-macOS 13 이상에서 돌도록 SwiftData 대신 JSON 파일을 씁니다. 저장 파일과 [파일 › 기록 내보내기] 파일의 형식이 같아서,
-다른 맥에서는 [파일 › 기록 가져오기]로 그대로 옮길 수 있습니다. 예전 버전의 `health.store`가 있으면 처음 실행 때 한 번 옮겨오고 원본은 그대로 둡니다.
+## 개인 정보
 
-## 개발용 환경변수 (Debug 빌드)
+기록은 내 맥(`~/Library/Application Support/HealthCheckup/`)에만 저장되고, 어디로도 보내지 않습니다.
+앱이 인터넷에 접속하는 것은 새 버전이 있는지 확인할 때뿐입니다.
 
-| 변수 | 효과 |
-|------|------|
-| `HEALTHCHECKUP_STORE=/경로/test.json` | 다른 저장 파일 사용 (실제 데이터와 분리) |
-| `HEALTHCHECKUP_SEED=1` | 비어 있으면 샘플 데이터 넣기 |
-| `HEALTHCHECKUP_SECTION=summary\|trends\|records\|profile` | 시작 화면 |
-| `HEALTHCHECKUP_PERSON=0` | 시작 구성원 번호 |
-| `HEALTHCHECKUP_OPEN_EDITOR=1` | 최근 검진 편집 창 열기 |
-| `HEALTHCHECKUP_EXPORT_MD=/경로/out.md` | 모든 구성원을 AI용 Markdown으로 저장 |
-| `HEALTHCHECKUP_FAKE_VERSION=0.0.9` | 지금 버전을 이 값으로 여김 (업데이트 알림 시험) |
-| `HEALTHCHECKUP_UPDATE_CHECK=1` | 켤 때 하루 한 번 제한 없이 업데이트 확인 |
-| `HEALTHCHECKUP_DUMP_MENU=1` | 3초 뒤 메뉴바 구성을 표준 출력에 찍음 |
-| `HEALTHCHECKUP_EDITOR_FOCUS=VITD` | 편집 창을 열면서 그 항목으로 이동 |
-| `HEALTHCHECKUP_EDITOR_SEARCH=요` | 편집 창의 항목 검색어 미리 넣기 |
-| `HEALTHCHECKUP_SECTION=trends` + `HEALTHCHECKUP_TREND=LDL` | 추이 화면에서 특정 항목 상세 열기 |
-| `HEALTHCHECKUP_CHECKUP=2` | 요약에서 n번째 검진(오래된 순, 0부터) 선택 |
-| `HEALTHCHECKUP_ORGAN=liver` | 요약에서 특정 부위 선택 |
+> 판정은 일반적인 기준으로 계산한 참고 정보이며, 의료진의 진단을 대신하지 않습니다.
