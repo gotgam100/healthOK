@@ -62,9 +62,9 @@ struct SummaryView: View {
     }
 
     private func content(_ checkup: Checkup, available: CGFloat) -> some View {
-        // 이번 검진에 빠진 항목은 가장 최근 해의 값으로 판정 (정상으로 간주하지 않음)
+        // 이번 검진에 기록된 값만으로 판정. 빠진 항목은 지난 값을 끌어오지 않고 '기록 없음'으로 보여줌
         let snapshot = person.snapshot(at: checkup, evaluator: evaluator)
-        let judged = snapshot.results
+        let judged = snapshot.results.filter { $0.carriedFrom == nil }
         let prevByCode = snapshot.previous
         let levels = evaluator.organLevels(judged.compactMap { j in j.judgment.map { (j.item.code, $0) } })
         let counts = Dictionary(grouping: judged.compactMap(\.judgment), by: \.level).mapValues(\.count)
@@ -177,7 +177,7 @@ private struct CheckupTimeline: View {
                         Rectangle().fill(.quaternary).frame(width: 24, height: 2)
                     }
                     let isCurrent = c === current
-                    let worst = c.person?.snapshot(at: c).results.compactMap(\.judgment).map(\.level).max()
+                    let worst = c.judged().compactMap(\.judgment).map(\.level).max()
                     Button { onSelect(c) } label: {
                         HStack(spacing: 6) {
                             Circle().fill(worst?.color ?? .gray).frame(width: 8, height: 8)
@@ -225,7 +225,7 @@ private struct OrganDetailPanel: View {
                             .foregroundStyle(level.color)
                     }
                 }
-                if items.isEmpty {
+                if items.isEmpty && allItems.isEmpty {
                     Text("이 부위 관련 기록이 아직 없습니다.")
                         .foregroundStyle(.secondary)
                     let related = Catalog.shared.items(for: sex).filter { $0.organs.contains(organ) }.map(\.name)
@@ -235,12 +235,12 @@ private struct OrganDetailPanel: View {
                     }
                 } else {
                     let byCode = Dictionary(items.map { ($0.item.code, $0) }, uniquingKeysWith: { a, _ in a })
-                    let carried = items.filter { $0.carriedFrom != nil }.count
                     let missing = allItems.filter { byCode[$0.code] == nil }.count
-                    if carried > 0 || missing > 0 {
-                        Text([carried > 0 ? "지난 검진 값 \(carried)개" : nil,
-                              missing > 0 ? "기록 없음 \(missing)개" : nil]
-                            .compactMap { $0 }.joined(separator: " · ") + " — 이번 검진 값만으로 판정한 것이 아닙니다")
+                    if items.isEmpty {
+                        Text("이번 검진에는 이 부위 기록이 없습니다.")
+                            .font(.caption).foregroundStyle(.secondary)
+                    } else if missing > 0 {
+                        Text("이번 검진에 기록 없는 항목 \(missing)개는 판정에 넣지 않았습니다.")
                             .font(.caption).foregroundStyle(.secondary)
                     }
                     // 판정과 상관없이 항목 사전 순서로 고정 (검진마다 순서가 바뀌지 않게)
