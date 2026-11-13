@@ -31,7 +31,7 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         INFOPLIST_KEY_CFBundleDisplayName: 건강하면됐지
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.medical
-        INFOPLIST_KEY_NSHumanReadableCopyright: ""
+        INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 healthOK"
         MARKETING_VERSION: "0.2.2"
         CURRENT_PROJECT_VERSION: "4"
         SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
