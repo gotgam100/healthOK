@@ -32,8 +32,8 @@ targets:
         INFOPLIST_KEY_CFBundleDisplayName: 건강하면됐지
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.medical
         INFOPLIST_KEY_NSHumanReadableCopyright: "Copyright © 2026 healthOK. All rights reserved."
-        MARKETING_VERSION: "0.2.2"
-        CURRENT_PROJECT_VERSION: "4"
+        MARKETING_VERSION: "0.2.3"
+        CURRENT_PROJECT_VERSION: "5"
         SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
         SWIFT_APPROACHABLE_CONCURRENCY: YES
         ENABLE_PREVIEWS: YES
