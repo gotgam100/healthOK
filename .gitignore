@@ -6,3 +6,4 @@ dist/
 xcuserdata/
 **/.build/
 *.zip
+build.noindex/

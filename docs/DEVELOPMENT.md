@@ -10,7 +10,7 @@ open HealthCheckup.xcodeproj   # Xcode에서 ⌘R
 ## 가족에게 나눠 줄 앱 만들기
 
 ```bash
-./scripts/build_app.sh     # dist/건강하면됐지.app, dist/HealthOK.dmg 생성
+./scripts/build_app.sh     # dist/HealthOK.dmg 생성
 ```
 
 Developer ID 인증서가 있으면 서명하고, 키체인에 공증 정보(`healthok`)가 있으면 Apple 공증까지 받습니다. 없으면 ad-hoc 서명으로 만듭니다.
